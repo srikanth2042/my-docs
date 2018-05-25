@@ -2,7 +2,9 @@ pipeline {
     agent { docker { label 'docker'; image 'python:3.6' } }
     stages { 
         stage('Checkout SCM') {
-            checkout scm
+            steps {
+                checkout scm
+            }
         }
         stage('Build') { 
             steps { 

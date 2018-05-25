@@ -7,8 +7,8 @@ pipeline {
             }
         }
         stage('Build') { 
+            def pass = build.environment.get("pass")
             steps { 
-                def pass = build.environment.get("pass")
                 echo pass
                 sh 'python3 -m venv venv'
                 sh 'pip install -U pip'

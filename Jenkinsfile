@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build') { 
             steps {
-                echo ${env.PASS}
+                echo "${env.PASS}"
                 sh 'python3 -m venv venv'
                 sh 'pip install -U pip'
                 sh 'pip install "mkdocs>=0.17.1,<0.18.0"'
